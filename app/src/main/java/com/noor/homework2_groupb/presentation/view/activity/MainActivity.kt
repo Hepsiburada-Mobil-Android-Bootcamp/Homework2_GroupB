@@ -1,7 +1,8 @@
-package com.noor.homework2_groupb
+package com.noor.homework2_groupb.presentation.view.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.noor.homework2_groupb.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
