@@ -9,28 +9,20 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".view.splash.SplashFragment">
+        tools:context=".view.onboarding.OnBoardingFragment">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="32sp"
             android:gravity="center"
-            android:text="Splash Fragment" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_onboarding"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Go To Onboarding"/>
+            android:text="OnBoarding Fragment" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_home"
-            android:layout_marginTop="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="Go To Home" />
+            android:text="Go To Home"/>
 
     </FrameLayout>
 </layout>
