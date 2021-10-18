@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
-import com.noor.homework2_groupb.MainActivity
+import com.noor.homework2_groupb.view.MainActivity
 
 abstract class BaseFragment<DB : ViewDataBinding>(
     private val inflate: (LayoutInflater, ViewGroup?, Boolean) -> DB,

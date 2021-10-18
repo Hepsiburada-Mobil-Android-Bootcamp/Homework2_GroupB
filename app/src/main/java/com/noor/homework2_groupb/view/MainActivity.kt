@@ -1,4 +1,4 @@
-package com.noor.homework2_groupb
+package com.noor.homework2_groupb.view
 
 import android.os.Bundle
 import android.view.View
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.noor.homework2_groupb.R
 import com.noor.homework2_groupb.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
