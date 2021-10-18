@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "614292198351",
+    "project_id": "bootcampprojectteamb",
+    "storage_bucket": "bootcampprojectteamb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:614292198351:android:787116508ffd73007e78ba",
+        "android_client_info": {
+          "package_name": "com.noor.homework2_groupb"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "614292198351-tv99nal0mk3ufdr5ste3oosg9bl177ju.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAztnQVMZTpcvd66R37RCCTaI18gG2l2fw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "614292198351-tv99nal0mk3ufdr5ste3oosg9bl177ju.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
