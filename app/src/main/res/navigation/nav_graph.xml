@@ -48,4 +48,6 @@
         android:id="@+id/profileFragment"
         android:name="com.noor.homework2_groupb.view.profile.ProfileFragment"
         android:label="ProfileFragment" />
+
+
 </navigation>
