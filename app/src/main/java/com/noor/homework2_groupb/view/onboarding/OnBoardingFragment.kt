@@ -10,7 +10,7 @@ import com.noor.homework2_groupb.databinding.FragmentOnBoardingBinding
 import com.noor.homework2_groupb.view.onboarding.animation.CubeOutDepthTransformation
 
 class OnBoardingFragment :
-    BaseFragment<FragmentOnBoardingBinding>(FragmentOnBoardingBinding::inflate,false) {
+    BaseFragment<FragmentOnBoardingBinding>(FragmentOnBoardingBinding::inflate) {
 
     val adapter by lazy { OnBoardAdapter(requireActivity()) }
 

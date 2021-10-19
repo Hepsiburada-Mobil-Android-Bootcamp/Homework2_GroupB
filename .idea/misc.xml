@@ -3,26 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/drawable/bg_firs_on_board_button.xml" value="0.382051282051282" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/activity_main.xml" value="0.18085106382978725" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/bg_splash_button.xml" value="0.28940217391304346" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/custom_text_header.xml" value="0.28940217391304346" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_detail.xml" value="0.28940217391304346" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_error_on_board.xml" value="0.28940217391304346" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_first_on_board.xml" value="0.28940217391304346" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_first_onboard.xml" value="0.28940217391304346" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_login.xml" value="0.22083333333333333" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_on_boarding.xml" value="0.2957427536231884" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_profile.xml" value="0.2957427536231884" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_second_on_board.xml" value="0.28940217391304346" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_second_onboard.xml" value="0.28940217391304346" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_splash.xml" value="0.18085106382978725" />
+        <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/drawable/bg_search_edittext.xml" value="0.3651041666666667" />
+        <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/drawable/ic_search.xml" value="0.3651041666666667" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/layout/activity_main.xml" value="0.3489583333333333" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/layout/fragment_detail.xml" value="0.3489583333333333" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/layout/fragment_favorites.xml" value="0.3489583333333333" />
+        <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/layout/fragment_first_on_board.xml" value="0.3489583333333333" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/layout/fragment_home.xml" value="0.3489583333333333" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/layout/fragment_on_boarding.xml" value="0.3489583333333333" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/layout/fragment_profile.xml" value="0.3489583333333333" />
+        <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/layout/fragment_second_on_board.xml" value="0.3489583333333333" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/layout/fragment_splash.xml" value="0.33489583333333334" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/menu/bottom_menu.xml" value="0.3489583333333333" />
       </map>
