@@ -26,7 +26,7 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
 
             override fun onAnimationEnd(p0: Animator?) {
                 when{
-                    isOnboardSeen()-> findNavController().navigate(R.id.action_splashFragment_to_homeFragment)
+                    isOnboardSeen()-> findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
                     else -> findNavController().navigate(R.id.action_splashFragment_to_onBoardingFragment)
                 }
             }
