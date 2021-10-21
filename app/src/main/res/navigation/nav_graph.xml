@@ -60,6 +60,26 @@
         android:id="@+id/signUpFragment"
         android:name="com.noor.homework2_groupb.view.login.SignUpFragment"
         android:label="SignUpFragment" />
+        android:label="ProfileFragment" >
+        <action
+            android:id="@+id/action_profileFragment_to_favoritesFragment"
+            app:destination="@id/favoritesFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_fragment_settings"
+            app:destination="@id/fragment_settings" />
+        <action
+            android:id="@+id/action_profileFragment_to_fragment_edit_profile"
+            app:destination="@id/fragment_edit_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_settings"
+        android:name="com.noor.homework2_groupb.fragment_settings"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/fragment_edit_profile"
+        android:name="com.noor.homework2_groupb.fragment_edit_profile"
+        android:label="fragment_edit_profile" />
 
 
 </navigation>
