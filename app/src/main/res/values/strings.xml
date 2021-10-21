@@ -8,4 +8,19 @@
     <string name="find_your_gadget">Find your Gadget</string>
     <string name="welcome_back">Welcome back</string>
     <string name="get_started">Get started</string>
+    <string name="search">Search</string>
+    <string name="home_title">Order online \ncollect in store</string>
+    <string name="add_product">Add Product</string>
+    <string name="most_liked_products">Most Liked Products</string>
+    <string name="image_of_product">Image of product</string>
+
+    <string name="price">$%d</string>
+    <string name="search_not_founded_image">Search not founded image</string>
+    <string name="item_not_found">Item not found</string>
+    <string name="try_a_more_generic_search_term_or_try_n_looking_for_alternative_products">Try a more generic search term or try\n looking for alternative products.</string>
+    <string name="wearable">Wearable</string>
+    <string name="laptops">Laptops</string>
+    <string name="phones">Phones</string>
+    <string name="tablets">Tablets</string>
+    <string name="add_product_image">Add Product Image</string>
 </resources>

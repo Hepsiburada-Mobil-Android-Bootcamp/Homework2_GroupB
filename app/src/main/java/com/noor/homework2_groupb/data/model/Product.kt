@@ -1,10 +1,10 @@
 package com.noor.homework2_groupb.data.model
 
 data class Product(
-    val name: String = "",
-    val title: String = "",
-    val type: String = "",
-    val description: String = "",
-    val imageUrl: String = "",
-    val price: Int = 0
+    val productName: String = "",
+    val productTitle: String = "",
+    val productType: String = "",
+    val productDescription: String = "",
+    val productImageUrl: String = "",
+    val productPrice: Int = 0
 )

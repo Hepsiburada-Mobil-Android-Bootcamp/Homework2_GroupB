@@ -34,6 +34,9 @@
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
@@ -48,6 +51,12 @@
         android:id="@+id/profileFragment"
         android:name="com.noor.homework2_groupb.view.profile.ProfileFragment"
         android:label="ProfileFragment" />
-
-
+    <dialog
+        android:id="@+id/addProductFragment"
+        android:name="com.noor.homework2_groupb.view.home.AddProductFragment"
+        android:label="AddProductFragment" >
+        <action
+            android:id="@+id/action_addProductFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </dialog>
 </navigation>
