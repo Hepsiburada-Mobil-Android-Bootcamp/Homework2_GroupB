@@ -15,7 +15,7 @@ class SecondOnBoardFragment : BaseFragment<FragmentSecondOnBoardBinding>(Fragmen
 
         binding.btnGetStarted.setOnClickListener {
             SharedPrefManager(requireContext()).setOnboardSeen()
-            findNavController().navigate(R.id.action_onBoardingFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_onBoardingFragment_to_loginFragment)
         }
     }
 
