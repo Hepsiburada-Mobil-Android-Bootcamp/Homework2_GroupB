@@ -69,7 +69,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
 
     // Lottie
-    implementation "com.airbnb.android:lottie:3.7.1"
+    implementation "com.airbnb.android:lottie:4.1.0"
 
     // Glide
     implementation 'com.github.bumptech.glide:glide:4.12.0'
@@ -78,7 +78,6 @@ dependencies {
     //Intuit
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
 
-
-
-
+    // Dexter
+    implementation 'com.karumi:dexter:6.2.3'
 }

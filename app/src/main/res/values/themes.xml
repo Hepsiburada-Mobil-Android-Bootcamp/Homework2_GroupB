@@ -2,7 +2,6 @@
     <!-- Base application theme. -->
     <style name="Theme.Homework2_GroupB" parent="Theme.MaterialComponents.DayNight.NoActionBar">
 
-
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
         <item name="colorPrimaryVariant">@color/purple_700</item>
@@ -15,4 +14,18 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="Widget.MyApp.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
+        ...
+        <item name="materialThemeOverlay">@style/ThemeOverlay.MyApp.Chip.Choice</item>
+    </style>
+
+    <!-- Disabling elevation overlays because when chip's default background/surface
+         composite are combined with elevation overlays in a highly elevated dialog,
+         the resulting color becomes too light and causes contrast
+         issues. -->
+    <style name="ThemeOverlay.MyApp.Chip.Choice" parent="">
+        <item name="elevationOverlayEnabled">false</item>
+    </style>
+
 </resources>

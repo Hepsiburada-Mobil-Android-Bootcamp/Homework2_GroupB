@@ -1,14 +1,12 @@
 package com.noor.homework2_groupb.data.model
 
-import android.net.Uri
-
 data class User(
-    val eMail: String? = null,
-    val password: String? = null,
-    val username: String? = null,
-    val img: Uri? = null,
-    val name:String? = null,
-    val surname: String? = null,
-    val adress: String? = null,
-    val phoneNumber: Int? = null
+    val eMail: String? = "",
+    val password: String? = "",
+    val username: String? = "",
+    val img: String? = "",
+    val name:String? = "",
+    val surname: String? = "",
+    val adress: String? = "",
+    val phoneNumber: Int? = 0
 )

@@ -16,8 +16,7 @@ import com.noor.homework2_groupb.databinding.FragmentLoginBinding
 
 class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::inflate,false) {
 
-    val auth by lazy { FirebaseAuth.getInstance() }
-
+    private val auth by lazy { FirebaseAuth.getInstance() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -35,7 +34,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
         }
     }
 
-    fun signInUser(email:String,password: String) {
+    private fun signInUser(email:String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
@@ -52,7 +51,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     }
 
     private fun updateUI(user: FirebaseUser?) {
-        if(user!=null){
+        if(auth.currentUser?.uid != null){
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }else{
             Toast.makeText(requireContext(),"Sign In Failed",Toast.LENGTH_SHORT).show()

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.noor.homework2_groupb.data.model.Product" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cv_item_category"
+            android:layout_width="220dp"
+            android:layout_height="270dp"
+            android:layout_marginTop="32dp"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/iv_item_category"
+            bindImageCircle="@{product.imageUrl}"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:contentDescription="@string/image_of_product"
+            android:translationZ="2dp"
+            app:layout_constraintEnd_toEndOf="@id/cv_item_category"
+            app:layout_constraintStart_toStartOf="@id/cv_item_category"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_item_category_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="32dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/raleway_semibold"
+            android:maxLines="1"
+            android:text="@{product.name}"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:translationZ="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_item_category"
+            tools:text="Apple Watch" />
+
+        <TextView
+            android:id="@+id/tv_item_category_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/raleway_semibold"
+            android:maxLines="1"
+            android:text="@{product.title}"
+            android:textAlignment="center"
+            android:textColor="@color/dark_secondary"
+            android:textSize="16sp"
+            android:translationZ="1dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_category_name"
+            tools:text="Series 6. Red" />
+
+        <TextView
+            android:id="@+id/tv_item_category_price"
+            bindPrice="@{product.price}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_bold"
+            android:textColor="@color/purple"
+            android:textSize="20sp"
+            android:translationZ="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cv_item_category"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tv_item_category_title"
+            tools:text="$359" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
