@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_login.xml" value="0.276268115942029" />
-        <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_sign_up.xml" value="0.276268115942029" />
+        <entry key="..\:/Android Projects/Homework2_GroupB/app/src/main/res/drawable/ic_arrow.xml" value="0.27" />
+        <entry key="..\:/Android Projects/Homework2_GroupB/app/src/main/res/drawable/ic_favorite.xml" value="0.27" />
+        <entry key="..\:/Android Projects/Homework2_GroupB/app/src/main/res/drawable/ic_unfavorite.xml" value="0.281" />
+        <entry key="..\:/Android Projects/Homework2_GroupB/app/src/main/res/layout/fragment_detail.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/drawable/bg_search_edittext.xml" value="0.3651041666666667" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/drawable/ic_search.xml" value="0.3651041666666667" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/layout/activity_main.xml" value="0.3489583333333333" />
@@ -17,25 +19,11 @@
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/layout/fragment_second_on_board.xml" value="0.3489583333333333" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/layout/fragment_splash.xml" value="0.33489583333333334" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/menu/bottom_menu.xml" value="0.3489583333333333" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.26666666666666666" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/drawable/bg_firs_on_board_button.xml" value="0.26666666666666666" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/drawable/bg_profile_buttons.xml" value="0.14444444444444443" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/drawable/bg_profile_user_picture.xml" value="0.14444444444444443" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/drawable/ic_favorite.xml" value="0.26666666666666666" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/drawable/ic_home.xml" value="0.26666666666666666" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26666666666666666" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/drawable/ic_person.xml" value="0.26666666666666666" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_edit_profile.xml" value="0.264" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_home.xml" value="0.2033514492753623" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_second_on_board.xml" value="0.2033514492753623" />
-        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
