@@ -26,11 +26,16 @@
         <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/drawable/ic_launcher_background.xml" value="0.26666666666666666" />
         <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/drawable/ic_person.xml" value="0.26666666666666666" />
         <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_detail.xml" value="0.20244565217391305" />
         <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_edit_profile.xml" value="0.264" />
+        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_favorites.xml" value="0.25416666666666665" />
         <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_home.xml" value="0.2033514492753623" />
         <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_second_on_board.xml" value="0.2033514492753623" />
         <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
+        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_user_information.xml" value="0.264" />
+        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_user_photo.xml" value="0.264" />
+        <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/xml/file_paths.xml" value="0.1" />
       </map>
     </option>
   </component>

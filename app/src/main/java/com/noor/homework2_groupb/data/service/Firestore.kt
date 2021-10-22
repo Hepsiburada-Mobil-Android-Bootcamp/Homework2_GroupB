@@ -1,5 +1,6 @@
 package com.noor.homework2_groupb.data.service
 
+import android.content.Intent
 import android.util.Log
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
@@ -31,4 +32,10 @@ class Firestore {
             }
         }
     }
+    /*fun logOutUser(){
+        //currentFirebaseUser.signOut()
+        //val intent = Intent(this,KullaniciActivity::class.java)
+        //startActivity(intent)
+        //finish()
+    }*/
 }
