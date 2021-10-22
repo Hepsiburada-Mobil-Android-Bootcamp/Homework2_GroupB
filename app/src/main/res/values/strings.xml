@@ -19,6 +19,7 @@
     <string name="image_of_product">Image of product</string>
 
     <string name="price">$%d</string>
+    <string name="favorite_count"> - %d Likes</string>
     <string name="search_not_founded_image">Search not founded image</string>
     <string name="item_not_found">Item not found</string>
     <string name="try_a_more_generic_search_term_or_try_n_looking_for_alternative_products">Try a more generic search term or try\n looking for alternative products.</string>
@@ -27,4 +28,15 @@
     <string name="phones">Phones</string>
     <string name="tablets">Tablets</string>
     <string name="add_product_image">Add Product Image</string>
+    <string name="go_to_home_arrow">Go to home arrow</string>
+    <string name="save">Save</string>
+    <string name="price_text">Price</string>
+    <string name="description">Description</string>
+    <string name="title">Title</string>
+    <string name="name">Name</string>
+    <string name="top_5">Top 5</string>
+    <string name="wearabler">wearable</string>
+    <string name="tablet">tablet</string>
+    <string name="phone">phone</string>
+    <string name="laptop">laptop</string>
 </resources>

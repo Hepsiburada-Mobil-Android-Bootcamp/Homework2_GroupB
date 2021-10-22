@@ -24,25 +24,28 @@
 
             <ImageView
                 android:id="@+id/iv_item_most_liked"
-                bindImageCircle="@{product.productImageUrl}"
+                bindImageCircle="@{product.imageUrl}"
                 android:layout_width="56dp"
                 android:layout_height="56dp"
                 android:contentDescription="@string/image_of_product"
                 android:scaleType="center"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/tv_item_most_liked_name"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
+                android:ellipsize="end"
                 android:fontFamily="@font/raleway_bold"
-                android:text="@{product.productName}"
+                android:maxLines="1"
+                android:text="@{product.name}"
                 android:textColor="@color/dark"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_item_most_liked_type"
+                app:layout_constraintEnd_toStartOf="@+id/tv_item_most_liked_price"
                 app:layout_constraintStart_toEndOf="@+id/iv_item_most_liked"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Apple Watch" />
@@ -52,22 +55,35 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:text="@{product.productType}"
+                android:text="@{product.type}"
                 android:textColor="@color/dark_secondary"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/iv_item_most_liked"
                 app:layout_constraintTop_toBottomOf="@+id/tv_item_most_liked_name"
                 tools:text="Tablet" />
 
             <TextView
+                android:id="@+id/tv_item_most_liked_count"
+                bindFavoriteCount="@{product.likeCount}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:textColor="@color/dark_secondary"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tv_item_most_liked_type"
+                app:layout_constraintTop_toBottomOf="@+id/tv_item_most_liked_name"
+                tools:text="Tablet" />
+
+            <TextView
                 android:id="@+id/tv_item_most_liked_price"
+                bindPrice="@{product.price}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/raleway_bold"
-                bindPrice="@{product.productPrice}"
                 android:textColor="@color/purple"
-                android:textSize="20sp"
+                android:textSize="14sp"
                 android:translationZ="2dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

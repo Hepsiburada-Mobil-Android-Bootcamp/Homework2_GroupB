@@ -1,12 +1,14 @@
 package com.noor.homework2_groupb.view.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.noor.homework2_groupb.R
 import com.noor.homework2_groupb.base.BaseFragment
 import com.noor.homework2_groupb.data.model.Product
 import com.noor.homework2_groupb.databinding.FragmentHomeBinding
@@ -24,11 +26,27 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
         initListenerForGoAddProduct()
         initRecyclerViews()
-        initChipGroupChangeListener()
         initRvSearch()
         initListenerProductList()
         initSearchLogic()
+        initChipListeners()
 
+    }
+
+    private fun initChipListeners() {
+        viewModel.getProductsByCategoryFromFirebase(getString(R.string.wearabler))
+        binding.chipWearable.setOnClickListener {
+            viewModel.getProductsByCategoryFromFirebase(getString(R.string.wearabler))
+        }
+        binding.chipTablets.setOnClickListener {
+            viewModel.getProductsByCategoryFromFirebase(getString(R.string.tablet))
+        }
+        binding.chipPhones.setOnClickListener {
+            viewModel.getProductsByCategoryFromFirebase(getString(R.string.phone))
+        }
+        binding.chipLaptops.setOnClickListener {
+            viewModel.getProductsByCategoryFromFirebase(getString(R.string.laptop))
+        }
     }
 
     private fun initListenerForGoAddProduct() {
@@ -48,18 +66,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         viewModel.mostLikedProducts.observe(viewLifecycleOwner) {
             binding.rvMostLikedProducts.adapter = MostLikedAdapter(it)
-        }
-    }
-
-    private fun initChipGroupChangeListener() {
-        binding.cgHomeCategory.setOnCheckedChangeListener { _, checkedId ->
-            when (checkedId) {
-                -1 -> viewModel.getProductsByCategoryFromFirebase("wearable")
-                2131361928 -> viewModel.getProductsByCategoryFromFirebase("wearable")
-                2131361925 -> viewModel.getProductsByCategoryFromFirebase("laptop")
-                2131361926 -> viewModel.getProductsByCategoryFromFirebase("phone")
-                2131361927 -> viewModel.getProductsByCategoryFromFirebase("tablet")
-            }
         }
     }
 
@@ -108,6 +114,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             rvHomeCategoryItem.visibility = View.VISIBLE
             tvMostLikedProducts.visibility = View.VISIBLE
             rvMostLikedProducts.visibility = View.VISIBLE
+            tvTop5.visibility = View.VISIBLE
         }
     }
 
@@ -118,6 +125,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
             rvHomeCategoryItem.visibility = View.GONE
             tvMostLikedProducts.visibility = View.GONE
             rvMostLikedProducts.visibility = View.GONE
+            tvTop5.visibility = View.GONE
         }
     }
 

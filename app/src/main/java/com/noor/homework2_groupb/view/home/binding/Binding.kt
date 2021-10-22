@@ -25,5 +25,10 @@ class Binding {
             text = context.getString(R.string.price, price)
         }
 
+        @JvmStatic
+        @BindingAdapter("bindFavoriteCount")
+        fun TextView.bindFavoriteCount(count: Int) {
+            text = context.getString(R.string.favorite_count, count)
+        }
     }
 }

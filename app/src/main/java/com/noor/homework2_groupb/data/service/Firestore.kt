@@ -12,8 +12,6 @@ class Firestore {
     private val db by lazy { FirebaseFirestore.getInstance() }
     private val currentFirebaseUser by lazy { FirebaseAuth.getInstance().currentUser }
 
-
-
     fun signUpUser(email:String,password:String){
 
         val user by lazy { User(email,password) }

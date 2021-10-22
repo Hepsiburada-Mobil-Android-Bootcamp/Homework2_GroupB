@@ -4,13 +4,18 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import com.noor.homework2_groupb.data.model.Product
+
+const val COLLECTION_PATH_PRODUCT = "product"
+const val FIELD_NAME = "name"
+const val FIELD_TYPE = "type"
+const val PRODUCT_LIKE_COUNT = "likeCount"
 
 class HomeViewModel : ViewModel() {
     private val db = FirebaseFirestore.getInstance()
 
     init {
-        getProductsByCategoryFromFirebase("wearable")
         getMostLikedProductsFromFirebase()
     }
 
@@ -30,23 +35,26 @@ class HomeViewModel : ViewModel() {
     var productResult: MutableLiveData<ArrayList<Product>> = _productResult
 
     fun searchFromFirebase(query: String?) {
-        db.collection("productDeneme").whereEqualTo("productName", query).get()
+        db.collection(COLLECTION_PATH_PRODUCT).whereEqualTo(FIELD_NAME, query).get()
             .addOnSuccessListener {
                 _productResult.value = it.toObjects(Product::class.java) as ArrayList<Product>
             }
     }
 
     private fun getMostLikedProductsFromFirebase() {
-        db.collection("productDeneme").addSnapshotListener { value, _ ->
-            if (value != null) {
-                _mostLikedProducts.value =
-                    value.toObjects(Product::class.java) as ArrayList<Product>
+        db.collection(COLLECTION_PATH_PRODUCT)
+            .orderBy(PRODUCT_LIKE_COUNT, Query.Direction.DESCENDING)
+            .limit(5)
+            .addSnapshotListener { value, _ ->
+                if (value != null) {
+                    _mostLikedProducts.value =
+                        value.toObjects(Product::class.java) as ArrayList<Product>
+                }
             }
-        }
     }
 
     fun getProductsByCategoryFromFirebase(category: String) {
-        db.collection("productDeneme").whereEqualTo("productType", category).get()
+        db.collection(COLLECTION_PATH_PRODUCT).whereEqualTo(FIELD_TYPE, category).get()
             .addOnSuccessListener {
                 _productList.value = it.toObjects(Product::class.java) as ArrayList<Product>
             }
