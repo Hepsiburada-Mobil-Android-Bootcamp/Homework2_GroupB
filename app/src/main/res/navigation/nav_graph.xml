@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/userPhotoFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -48,6 +48,10 @@
         android:id="@+id/profileFragment"
         android:name="com.noor.homework2_groupb.view.profile.ProfileFragment"
         android:label="ProfileFragment" >
+        <action android:id="@+id/profileFragment_to_loginFragment"
+            app:destination="@+id/loginFragment"/>
+    </fragment>
+        android:label="ProfileFragment" >
         <action
             android:id="@+id/action_profileFragment_to_favoritesFragment2"
             app:destination="@id/favoritesFragment" />
@@ -65,17 +69,32 @@
         <action
             android:id="@+id/action_loginFragment_toSignUpFragment"
             app:destination="@id/signUpFragment" />
+        <action android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@+id/homeFragment"/>
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.noor.homework2_groupb.view.login.SignUpFragment"
+        android:label="SignUpFragment" >
+
+        <action android:id="@+id/signUpFragment_to_loginFragment"
+              app:destination="@+id/loginFragment"/>
         android:label="SignUpFragment" />
         <action
             android:id="@+id/action_profileFragment_to_favoritesFragment"
             app:destination="@id/favoritesFragment" />
         <action
+            android:id="@+id/action_profileFragment_to_fragment_settings"
+            app:destination="@id/fragment_settings" />
+        <action
             android:id="@+id/action_profileFragment_to_fragment_edit_profile"
             app:destination="@id/fragment_edit_profile" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_settings"
+        android:name="com.noor.homework2_groupb.view.profile.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/fragment_edit_profile"
         android:name="com.noor.homework2_groupb.fragment_edit_profile"
