@@ -34,12 +34,16 @@ class AddProductViewModel : ViewModel() {
     fun uploadImageToFirebase(imageUri: Uri) {
         isShowProgressBar.value = true
         ref.putFile(imageUri).addOnSuccessListener { _ ->
-            ref.downloadUrl.addOnSuccessListener { uri ->
-                Log.d("DOWNLOADED_URL", uri.toString())
-                productImageUrl.value = uri.toString()
-                isShowProgressBar.value = false
-            }
+            getDownloadedUrl()
         }.addOnCanceledListener {
+            isShowProgressBar.value = false
+        }
+    }
+
+    private fun getDownloadedUrl() {
+        ref.downloadUrl.addOnSuccessListener { uri ->
+            Log.d("DOWNLOADED_URL", uri.toString())
+            productImageUrl.value = uri.toString()
             isShowProgressBar.value = false
         }
     }

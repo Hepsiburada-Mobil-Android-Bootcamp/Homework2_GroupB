@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/splashFragment"
         android:name="com.noor.homework2_groupb.view.splash.SplashFragment"
         android:label="fragment_splash"
-        tools:layout="@layout/fragment_splash" >
+        tools:layout="@layout/fragment_splash">
         <action
             android:id="@+id/action_splashFragment_to_onBoardingFragment"
             app:destination="@id/onBoardingFragment" />
@@ -21,7 +21,7 @@
         android:id="@+id/onBoardingFragment"
         android:name="com.noor.homework2_groupb.view.onboarding.OnBoardingFragment"
         android:label="fragment_on_boarding"
-        tools:layout="@layout/fragment_on_boarding" >
+        tools:layout="@layout/fragment_on_boarding">
         <action
             android:id="@+id/action_onBoardingFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
@@ -30,7 +30,7 @@
         android:id="@+id/homeFragment"
         android:name="com.noor.homework2_groupb.view.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_detailFragment"
             app:destination="@id/detailFragment" />
@@ -54,44 +54,69 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.noor.homework2_groupb.view.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment">
+        <action
+            android:id="@+id/profileFragment_to_loginFragment"
+            app:destination="@+id/loginFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_favoritesFragment2"
+            app:destination="@id/favoritesFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_fragment_edit_profile2"
+            app:destination="@id/editProfileFragments" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.noor.homework2_groupb.view.login.LoginFragment"
-        android:label="LoginFragment" >
+        android:label="LoginFragment">
         <action
             android:id="@+id/action_loginFragment_toSignUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@+id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.noor.homework2_groupb.view.login.SignUpFragment"
-        android:label="SignUpFragment" >
+        android:label="SignUpFragment">
+        <action
+            android:id="@+id/signUpFragment_to_loginFragment"
+            app:destination="@+id/loginFragment" />
         <action
             android:id="@+id/action_profileFragment_to_favoritesFragment"
             app:destination="@id/favoritesFragment" />
         <action
             android:id="@+id/action_profileFragment_to_fragment_settings"
-            app:destination="@id/fragment_settings" />
+            app:destination="@id/settingsFragment" />
         <action
             android:id="@+id/action_profileFragment_to_fragment_edit_profile"
-            app:destination="@id/fragment_edit_profile" />
+            app:destination="@id/editProfileFragments" />
     </fragment>
-
     <fragment
-        android:id="@+id/fragment_settings"
-        android:name="com.noor.homework2_groupb.view.profile.SettingsFragment"
-        android:label="fragment_settings"
+        android:id="@+id/editProfileFragments"
+        android:name="com.noor.homework2_groupb.view.profile.EditProfileFragment"
+        android:label="fragment_edit_profile" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.noor.homework2_groupb.view.settings.SettingsFragment"
+        android:label="SettingsFragment"
         tools:layout="@layout/fragment_settings" />
     <fragment
-        android:id="@+id/fragment_edit_profile"
-        android:name="com.noor.homework2_groupb.fragment_edit_profile"
-        android:label="fragment_edit_profile" />
-
+        android:id="@+id/userInformationFragment"
+        android:name="com.noor.homework2_groupb.view.user.UserInformationFragment"
+        android:label="UserInformationFragment" />
+    <fragment
+        android:id="@+id/userPhotoFragment"
+        android:name="com.noor.homework2_groupb.view.user.UserPhotoFragment"
+        android:label="UserPhotoFragment" />
     <fragment
         android:id="@+id/addProductFragment"
         android:name="com.noor.homework2_groupb.view.addproduct.AddProductFragment"
-        android:label="AddProductFragment" >
+        android:label="AddProductFragment">
         <action
             android:id="@+id/action_addProductFragment_to_homeFragment"
             app:popUpTo="@id/homeFragment" />

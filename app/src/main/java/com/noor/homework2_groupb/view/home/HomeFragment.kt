@@ -3,11 +3,13 @@ package com.noor.homework2_groupb.view.home
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import com.noor.homework2_groupb.R
 import com.noor.homework2_groupb.base.BaseFragment
 import com.noor.homework2_groupb.data.model.Product
@@ -20,6 +22,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
 
     private val viewModel by viewModels<HomeViewModel>()
     val productList: ArrayList<Product> by lazy { arrayListOf() }
+
+    val user = FirebaseAuth.getInstance().currentUser?.uid
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
