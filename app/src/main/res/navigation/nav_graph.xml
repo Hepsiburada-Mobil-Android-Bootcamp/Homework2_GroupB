@@ -47,7 +47,10 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.noor.homework2_groupb.view.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="ProfileFragment" >
+        <action android:id="@+id/profileFragment_to_loginFragment"
+            app:destination="@+id/loginFragment"/>
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.noor.homework2_groupb.view.login.LoginFragment"
@@ -55,12 +58,16 @@
         <action
             android:id="@+id/action_loginFragment_toSignUpFragment"
             app:destination="@id/signUpFragment" />
+        <action android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@+id/homeFragment"/>
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.noor.homework2_groupb.view.login.SignUpFragment"
-        android:label="SignUpFragment" />
-        android:label="ProfileFragment" >
+        android:label="SignUpFragment" >
+
+        <action android:id="@+id/signUpFragment_to_loginFragment"
+              app:destination="@+id/loginFragment"/>
         <action
             android:id="@+id/action_profileFragment_to_favoritesFragment"
             app:destination="@id/favoritesFragment" />
@@ -73,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_settings"
-        android:name="com.noor.homework2_groupb.fragment_settings"
+        android:name="com.noor.homework2_groupb.view.profile.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
