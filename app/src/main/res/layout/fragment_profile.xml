@@ -73,7 +73,6 @@
                     android:text="Name and Surname"
                     android:textAlignment="center"
                     android:textColor="@color/profile_text_color"
-
                     android:textSize="20sp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/image_user" />

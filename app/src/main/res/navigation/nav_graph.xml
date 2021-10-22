@@ -51,17 +51,15 @@
         <action android:id="@+id/profileFragment_to_loginFragment"
             app:destination="@+id/loginFragment"/>
     </fragment>
-        android:label="ProfileFragment" >
         <action
             android:id="@+id/action_profileFragment_to_favoritesFragment2"
             app:destination="@id/favoritesFragment" />
         <action
             android:id="@+id/action_profileFragment_to_settingsFragment"
-            app:destination="@id/settingsFragment" />
+            app:destination="@id/fragment_settings" />
         <action
             android:id="@+id/action_profileFragment_to_fragment_edit_profile2"
             app:destination="@id/fragment_edit_profile" />
-    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.noor.homework2_groupb.view.login.LoginFragment"
@@ -79,7 +77,6 @@
 
         <action android:id="@+id/signUpFragment_to_loginFragment"
               app:destination="@+id/loginFragment"/>
-        android:label="SignUpFragment" />
         <action
             android:id="@+id/action_profileFragment_to_favoritesFragment"
             app:destination="@id/favoritesFragment" />
@@ -92,17 +89,13 @@
     </fragment>
     <fragment
         android:id="@+id/fragment_settings"
-        android:name="com.noor.homework2_groupb.view.profile.SettingsFragment"
+        android:name="com.noor.homework2_groupb.view.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/fragment_edit_profile"
-        android:name="com.noor.homework2_groupb.fragment_edit_profile"
+        android:name="com.noor.homework2_groupb.view.profile.EditProfileFragment"
         android:label="fragment_edit_profile" />
-    <fragment
-        android:id="@+id/settingsFragment"
-        android:name="com.noor.homework2_groupb.view.settings.SettingsFragment"
-        android:label="SettingsFragment" />
     <fragment
         android:id="@+id/userInformationFragment"
         android:name="com.noor.homework2_groupb.view.user.UserInformationFragment"
