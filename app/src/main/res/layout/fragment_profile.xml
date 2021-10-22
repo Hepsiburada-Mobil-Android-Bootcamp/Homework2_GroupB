@@ -56,15 +56,15 @@
                android:layout_width="76dp"
                android:layout_height="76dp"
                android:layout_marginLeft="120dp"
-               app:circularflow_radiusInDP="76dp"
                app:layout_constraintLeft_toLeftOf="parent"
-               app:layout_constraintTop_toTopOf="parent"
                android:layout_alignParentTop="true"
-               app:srcCompat="@drawable/bg_profile_user_picture"
+               app:layout_constraintTop_toTopOf="parent"
+               android:background="@drawable/bg_profile_user_picture"
+               app:srcCompat="@drawable/ic_person"
                />
 
                 <TextView
-                    android:id="@+id/text_name"
+                    android:id="@+id/text_name_and_surname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="80dp"
@@ -83,7 +83,7 @@
                     android:layout_width="16dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="28dp"
-                    android:layout_marginTop="100dp"
+                    android:layout_marginTop="124dp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     android:src="@drawable/profile_location_icon"
@@ -93,15 +93,14 @@
                     android:id="@+id/text_address"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="28dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_marginLeft="36dp"
+                    android:layout_marginTop="8dp"
                     android:fontFamily="@font/raleway_medium"
+                    android:gravity="top"
                     android:text="Address"
                     android:textColor="@color/profile_text_color"
-                    android:gravity="top"
                     app:layout_constraintLeft_toLeftOf="@id/image_location"
-                    app:layout_constraintTop_toBottomOf="@id/text_name" />
-
+                    app:layout_constraintTop_toBottomOf="@id/text_name_and_surname" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

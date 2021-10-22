@@ -1,5 +1,6 @@
 package com.noor.homework2_groupb.data.service
 
+import android.content.Intent
 import android.util.Log
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -24,6 +25,7 @@ class Firestore {
                         false-> Log.d("firebaseData","fail")
                     }
                 }
+
             } else {
                 Log.d("firebaseAuth", "fail")
             }

@@ -11,8 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#E5E5E5"
-        tools:context=".EditProfileFragment">
-
+        tools:context=".view.user.UserInformationFragment">
         <ImageButton
             android:id="@+id/imageBtn_arrow_left"
             android:layout_width="40dp"
@@ -31,27 +30,39 @@
             android:layout_marginLeft="40dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/raleway_medium"
-            android:text="My Profile Edit"
+            android:text="Fill in your bio to get started"
             android:textAlignment="center"
-            android:textColor="#09051C"
+            android:textColor="@color/profile_text_color"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="@id/imageBtn_arrow_left"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <TextView
+            android:id="@+id/text_information"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/raleway_medium"
+            android:text="This data will be displayed in your profile for security"
+            android:textColor="@color/profile_text_color"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_fill" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/e_text_name"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
             android:hint="Name"
             app:hintTextColor="@color/profile_text_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/text_fill">
+            app:layout_constraintTop_toTopOf="@id/text_information">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -153,7 +164,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button_save"
+            android:id="@+id/button_next"
             android:layout_width="300dp"
             android:layout_height="60dp"
             android:layout_marginStart="48dp"
