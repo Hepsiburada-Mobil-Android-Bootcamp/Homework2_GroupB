@@ -18,13 +18,16 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
 
     private val auth by lazy { FirebaseAuth.getInstance() }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun onStart() {
+        super.onStart()
         val currentUser = auth.currentUser
         if(currentUser != null){
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         binding.textCreateAccount.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_toSignUpFragment)
@@ -51,7 +54,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     }
 
     private fun updateUI(user: FirebaseUser?) {
-        if(auth.currentUser?.uid != null){
+        if(user != null){
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }else{
             Toast.makeText(requireContext(),"Sign In Failed",Toast.LENGTH_SHORT).show()

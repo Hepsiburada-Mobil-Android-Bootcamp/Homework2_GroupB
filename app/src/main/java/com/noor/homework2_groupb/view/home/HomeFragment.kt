@@ -23,8 +23,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     private val viewModel by viewModels<HomeViewModel>()
     val productList: ArrayList<Product> by lazy { arrayListOf() }
 
-    val user = FirebaseAuth.getInstance().currentUser?.uid
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -34,7 +32,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         initListenerProductList()
         initSearchLogic()
         initChipListeners()
-
     }
 
     private fun initChipListeners() {
