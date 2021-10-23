@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.core.view.isEmpty
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -80,8 +81,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         viewModel.productResult.observe(viewLifecycleOwner) {
             productList.addAll(it)
             if (it.isNullOrEmpty()) {
-                showNotFoundComponents()
-                hideHomeComponents()
+                if (binding.svSearch.query.isNullOrEmpty()) {
+                    hideNotFoundComponents()
+                    showHomeComponents()
+                } else {
+                    showNotFoundComponents()
+                    hideHomeComponents()
+                }
             } else {
                 hideNotFoundComponents()
                 hideHomeComponents()
@@ -97,12 +103,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                 viewModel.searchFromFirebase(query)
                 return true
             }
-
             override fun onQueryTextChange(newText: String?): Boolean {
                 binding.rvSearch.visibility = View.GONE
                 productList.clear()
-                hideNotFoundComponents()
-                showHomeComponents()
+                viewModel.searchFromFirebase(newText)
                 return true
             }
         })
