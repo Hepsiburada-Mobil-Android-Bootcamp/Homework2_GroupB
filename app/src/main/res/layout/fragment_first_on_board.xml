@@ -25,7 +25,6 @@
         android:textColor="@color/white"
         android:textSize="65sp"/>
 
-
     <Button
         android:id="@+id/btn_goto_second"
         android:layout_width="314dp"

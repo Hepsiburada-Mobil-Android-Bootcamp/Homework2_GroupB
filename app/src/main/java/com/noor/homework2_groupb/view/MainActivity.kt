@@ -3,7 +3,6 @@ package com.noor.homework2_groupb.view
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.noor.homework2_groupb.R
@@ -22,10 +21,10 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController = navHostFragment.navController
+
         binding.bottomNavigationView.setupWithNavController(
             navController
         )
-
     }
 
     fun showNavigationBar() {

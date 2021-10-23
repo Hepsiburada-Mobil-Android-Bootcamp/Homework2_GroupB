@@ -18,28 +18,29 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>(FragmentSplashBinding
         lottieAnimationListener()
     }
 
-    private fun lottieAnimationListener(){
-        binding.lottieAnimation.addAnimatorListener(object : Animator.AnimatorListener{
+    private fun lottieAnimationListener() {
+        binding.lottieAnimation.addAnimatorListener(object : Animator.AnimatorListener {
             override fun onAnimationStart(p0: Animator?) {
-                Log.v("Animation","Animation started")
+                Log.v("Animation", "Animation started")
             }
 
             override fun onAnimationEnd(p0: Animator?) {
-                when{
-                    isOnboardSeen()-> findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
-                    else -> findNavController().navigate(R.id.action_splashFragment_to_onBoardingFragment)
+                when (isOnboardSeen()) {
+                    true -> findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+                    false -> findNavController().navigate(R.id.action_splashFragment_to_onBoardingFragment)
                 }
             }
 
             override fun onAnimationCancel(p0: Animator?) {
-                Log.v("Animation","Animation cancelled")
+                Log.v("Animation", "Animation cancelled")
             }
 
             override fun onAnimationRepeat(p0: Animator?) {
-                Log.v("Animation","Animation repeated")
+                Log.v("Animation", "Animation repeated")
             }
 
         })
     }
-    private fun isOnboardSeen():Boolean=SharedPrefManager(requireContext()).isOnboardSeen()
+
+    private fun isOnboardSeen(): Boolean = SharedPrefManager(requireContext()).isOnboardSeen()
 }
