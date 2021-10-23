@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="product"
+            type="com.noor.homework2_groupb.data.model.Product" />
     </data>
 
     <FrameLayout
@@ -17,7 +19,7 @@
             android:layout_height="match_parent"
             android:textSize="32sp"
             android:gravity="center"
-            android:text="Favorites Fragment" />
+            android:text="@{product.name}" />
 
     </FrameLayout>
 </layout>

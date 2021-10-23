@@ -7,13 +7,17 @@ import com.noor.homework2_groupb.data.model.Product
 import com.noor.homework2_groupb.databinding.ItemMostLikedBinding
 
 class MostLikedAdapter(
-    private val productList: ArrayList<Product>
+    private val productList: ArrayList<Product>,
+    val clickListener: (product: Product) -> Unit = {}
 ) : RecyclerView.Adapter<MostLikedAdapter.MostLikedViewHolder>() {
 
     inner class MostLikedViewHolder(private val binding: ItemMostLikedBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
             binding.product = product
+            binding.root.setOnClickListener {
+                clickListener(product)
+            }
         }
     }
 

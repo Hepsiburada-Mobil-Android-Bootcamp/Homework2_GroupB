@@ -1,16 +1,12 @@
 package com.noor.homework2_groupb.view.home
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.widget.SearchView
-import androidx.core.view.isEmpty
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.google.firebase.auth.FirebaseAuth
 import com.noor.homework2_groupb.R
 import com.noor.homework2_groupb.base.BaseFragment
 import com.noor.homework2_groupb.data.model.Product
@@ -27,9 +23,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        initListenerForGoAddProduct()
+        initListenerForNavigateToAddProduct()
         initRecyclerViews()
-        initRvSearch()
         initListenerProductList()
         initSearchLogic()
         initChipListeners()
@@ -51,30 +46,51 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
         }
     }
 
-    private fun initListenerForGoAddProduct() {
+    private fun initListenerForNavigateToAddProduct() {
         binding.ivAddProduct.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAddProductFragment())
         }
     }
 
     private fun initRecyclerViews() {
-        binding.rvHomeCategoryItem.layoutManager =
-            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        viewModel.productList.observe(viewLifecycleOwner) {
-            binding.rvHomeCategoryItem.adapter = CategoryAdapter(it)
-        }
 
+        initRvCategory()
+        initRvMostLiked()
+        initRvSearch()
+
+    }
+
+    private fun initRvMostLiked() {
         binding.rvMostLikedProducts.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         viewModel.mostLikedProducts.observe(viewLifecycleOwner) {
-            binding.rvMostLikedProducts.adapter = MostLikedAdapter(it)
+            binding.rvMostLikedProducts.adapter = MostLikedAdapter(it) { product ->
+                navigateToDetail(product)
+            }
+        }
+    }
+
+    private fun initRvCategory() {
+        binding.rvHomeCategoryItem.layoutManager =
+            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        viewModel.productList.observe(viewLifecycleOwner) {
+            binding.rvHomeCategoryItem.adapter = CategoryAdapter(it) { product ->
+                navigateToDetail(product)
+            }
         }
     }
 
     private fun initRvSearch() {
         binding.rvSearch.layoutManager =
             StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        binding.rvSearch.adapter = SearchResultAdapter(productList)
+        binding.rvSearch.adapter = SearchResultAdapter(productList) { product ->
+            navigateToDetail(product)
+        }
+    }
+
+    private fun navigateToDetail(it: Product) {
+        val action = HomeFragmentDirections.actionHomeFragmentToDetailFragment(it)
+        findNavController().navigate(action)
     }
 
     private fun initListenerProductList() {

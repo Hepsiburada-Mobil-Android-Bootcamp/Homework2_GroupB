@@ -7,13 +7,17 @@ import com.noor.homework2_groupb.data.model.Product
 import com.noor.homework2_groupb.databinding.ItemSearchResultBinding
 
 class SearchResultAdapter(
-    private val resultArray: ArrayList<Product>
+    private val resultArray: ArrayList<Product>,
+    val clickListener: (product: Product) -> Unit = {}
 ) : RecyclerView.Adapter<SearchResultAdapter.SearchViewHolder>() {
 
     inner class SearchViewHolder(private val binding: ItemSearchResultBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
             binding.product = product
+            binding.root.setOnClickListener {
+                clickListener(product)
+            }
         }
     }
 

@@ -7,13 +7,17 @@ import com.noor.homework2_groupb.data.model.Product
 import com.noor.homework2_groupb.databinding.ItemCategoryBinding
 
 class CategoryAdapter(
-    private val productList: ArrayList<Product>
+    private val productList: ArrayList<Product>,
+    val clickListener: (product: Product) -> Unit = {}
 ) : RecyclerView.Adapter<CategoryAdapter.CategoryHolder>() {
 
     inner class CategoryHolder(private val binding: ItemCategoryBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
             binding.product = product
+            binding.root.setOnClickListener {
+                clickListener(product)
+            }
         }
     }
 
