@@ -5,27 +5,33 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.noor.homework2_groupb.data.model.Product
 import com.noor.homework2_groupb.data.model.User
-import com.noor.homework2_groupb.view.home.COLLECTION_PATH_PRODUCT
-import com.noor.homework2_groupb.view.home.FIELD_NAME
 
 const val COLLECTION_PATH_USER = "users"
 
 class ProfileViewModel : ViewModel() {
-//
-//    val db = FirebaseFirestore.getInstance()
-//    var currentUser: String = ""
-//
-//    val user: MutableLiveData<User> by lazy {
-//        MutableLiveData<User>()
-//    }
-//
-//    fun getProfileFromFirebase() {
-//        db.collection(COLLECTION_PATH_USER).document(currentUser).get()
-//            .addOnSuccessListener {
-//                user.value = it.toObject(User::class.java) as User
-//            }
-//    }
+
+
+    private val db = FirebaseFirestore.getInstance()
+    private val currentUser=FirebaseAuth.getInstance().currentUser!!.uid
+
+    val user by lazy { MutableLiveData<User>() }
+
+    fun getProfileFromFirebase() {
+        db.collection(COLLECTION_PATH_USER).document(currentUser).get()
+            .addOnSuccessListener {
+                if(it!=null) {
+                    user.value = it.toObject(User::class.java) as User
+                    Log.d("it","Document ${user.value}")
+                }else{
+                    Log.d("it","No document")
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.d("it", "get failed with ", exception)
+            }
+
+    }
+
 
 }
