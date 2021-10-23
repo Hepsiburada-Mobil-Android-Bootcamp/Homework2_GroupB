@@ -23,11 +23,21 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        initProgressBarListener()
         initListenerForNavigateToAddProduct()
         initRecyclerViews()
         initListenerProductList()
         initSearchLogic()
         initChipListeners()
+    }
+
+    private fun initProgressBarListener() {
+        viewModel.showProgressBar.observe(viewLifecycleOwner) {
+            when(it) {
+                true -> binding.pbHome.visibility = View.VISIBLE
+                false -> binding.pbHome.visibility = View.GONE
+            }
+        }
     }
 
     private fun initChipListeners() {

@@ -19,6 +19,10 @@ class HomeViewModel : ViewModel() {
         getMostLikedProductsFromFirebase()
     }
 
+    val showProgressBar: MutableLiveData<Boolean> by lazy {
+        MutableLiveData<Boolean>(false)
+    }
+
     private val _productList by lazy {
         MutableLiveData<ArrayList<Product>>()
     }
@@ -35,9 +39,12 @@ class HomeViewModel : ViewModel() {
     var productResult: MutableLiveData<ArrayList<Product>> = _productResult
 
     fun searchFromFirebase(query: String?) {
+        showProgressBar.value = true
         db.collection(COLLECTION_PATH_PRODUCT).whereEqualTo(FIELD_NAME, query).get()
             .addOnSuccessListener {
                 _productResult.value = it.toObjects(Product::class.java) as ArrayList<Product>
+            }.addOnCompleteListener {
+                showProgressBar.value = false
             }
     }
 
@@ -54,9 +61,12 @@ class HomeViewModel : ViewModel() {
     }
 
     fun getProductsByCategoryFromFirebase(category: String) {
+        showProgressBar.value = true
         db.collection(COLLECTION_PATH_PRODUCT).whereEqualTo(FIELD_TYPE, category).get()
             .addOnSuccessListener {
                 _productList.value = it.toObjects(Product::class.java) as ArrayList<Product>
+            }.addOnCompleteListener {
+                showProgressBar.value = false
             }
     }
 }
