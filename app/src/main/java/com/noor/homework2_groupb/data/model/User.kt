@@ -1,7 +1,7 @@
 package com.noor.homework2_groupb.data.model
 
 data class User(
-    val eMail: String? = "",
+    val email: String? = "",
     val password: String? = "",
     val username: String? = "",
     val img: String? = "",

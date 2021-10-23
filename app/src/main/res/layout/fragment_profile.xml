@@ -61,7 +61,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/raleway_medium"
-                    android:text="@{user.name}"
+                    android:text="@{user.email}"
                     android:textAlignment="center"
                     android:textColor="@color/profile_text_color"
                     android:textSize="20sp"

@@ -13,19 +13,19 @@ import com.noor.homework2_groupb.view.home.FIELD_NAME
 const val COLLECTION_PATH_USER = "users"
 
 class ProfileViewModel : ViewModel() {
-//
-//    val db = FirebaseFirestore.getInstance()
-//    var currentUser: String = ""
-//
-//    val user: MutableLiveData<User> by lazy {
-//        MutableLiveData<User>()
-//    }
-//
-//    fun getProfileFromFirebase() {
-//        db.collection(COLLECTION_PATH_USER).document(currentUser).get()
-//            .addOnSuccessListener {
-//                user.value = it.toObject(User::class.java) as User
-//            }
-//    }
+
+  val db = FirebaseFirestore.getInstance()
+   var currentUser: String = ""
+
+   val user: MutableLiveData<User> by lazy {
+       MutableLiveData<User>()
+   }
+
+  fun getProfileFromFirebase() {
+        db.collection(COLLECTION_PATH_USER).document(currentUser).get()
+           .addOnSuccessListener {
+               user.value = it.toObject(User::class.java) as? User
+           }
+    }
 
 }
