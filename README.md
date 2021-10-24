@@ -8,6 +8,8 @@ Hepsiburada Bootcamp Homework2 Group B
 - DataBinding
 - RecyclerView
 - View Model
+- MVVM
+- CRUD Functions
 - Fragments
 - Firebase Firestore
 
