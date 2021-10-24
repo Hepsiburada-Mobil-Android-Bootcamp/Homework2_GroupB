@@ -49,25 +49,22 @@ class ProfileViewModel : ViewModel() {
         ref.downloadUrl.addOnSuccessListener { uri ->
             Log.d("DOWNLOADED_URL", uri.toString())
             userImageUrl.value = uri.toString()
+        }.addOnSuccessListener {
+            updateUserModel()
         }
     }
-    fun uploadUserImage(imageUri: Uri){
-        FirebaseAuth.getInstance().currentUser?.apply {
-            val profileUpdates : UserProfileChangeRequest = UserProfileChangeRequest.Builder().
-            setPhotoUri(imageUri).
-            build()
-            updateProfile(profileUpdates).addOnCompleteListener(OnCompleteListener {
-                when(it.isSuccessful) {
-                    true -> apply {
-                        ref.putFile(imageUri).addOnSuccessListener { _ ->
-                            getDownloadedUrl()
-                        }
-                        Log.d("seyma","success")
-                    }
-                    false -> Log.d("seyma","fail")
-                }
 
-            })
+    fun uploadUserImage(imageUri: Uri){
+        ref.putFile(imageUri).addOnSuccessListener { _ ->
+            getDownloadedUrl()
+        }
+    }
+    private fun updateUserModel() {
+        db.collection("users").document(currentUser).update("img",userImageUrl.value.toString()).addOnSuccessListener {
+            Log.d("UPDATE_PROFILE",currentUser)
+            Log.d("UPDATE_PROFILE",userImageUrl.value.toString())
+        }.addOnFailureListener {
+            Log.d("UPDATE_PROFILE", it.toString())
         }
     }
 }

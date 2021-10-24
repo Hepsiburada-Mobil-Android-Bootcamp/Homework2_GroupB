@@ -24,7 +24,7 @@ class FavoritesFragment :
             }
         }
 
-        viewModel.getFavoritesFromFirebase()
+//        viewModel.getFavoritesFromFirebase()
 
     }
 

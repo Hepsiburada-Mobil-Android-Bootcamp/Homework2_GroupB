@@ -25,23 +25,23 @@ class FavoritesViewModel: ViewModel() {
     var productSample: Product = Product()
     var productIdList: HashMap<String, ArrayList<String>> = HashMap()
 
-    fun getFavoritesFromFirebase() {
-        db.collection(COLLECTION_FAVORITES).document(currentUser).get().addOnSuccessListener { it ->
-            productIdList = it.data as HashMap<String, ArrayList<String>>
-            Log.d("HASHMAP", productIdList.toString())
-            productIdList["name"]?.forEach { productId ->
-                getFavoriteAll(productId)
-            }
-        }.addOnCompleteListener {
-            _productList.value = productList
-        }
-    }
-
-    private fun getFavoriteAll(productId: String) {
-        db.collection(COLLECTION_PRODUCT).document(productId).get().addOnSuccessListener {
-            productList.add(it.toObject(Product::class.java) as Product)
-            Log.d("PRODUCTT", it["name"].toString())
-        }
-    }
+//    fun getFavoritesFromFirebase() {
+//        db.collection(COLLECTION_FAVORITES).document(currentUser).get().addOnSuccessListener { it ->
+//            productIdList = it.data as HashMap<String, ArrayList<String>>
+//            Log.d("HASHMAP", productIdList.toString())
+//            productIdList["name"]?.forEach { productId ->
+//                getFavoriteAll(productId)
+//            }
+//        }.addOnCompleteListener {
+//            _productList.value = productList
+//        }
+//    }
+//
+//    private fun getFavoriteAll(productId: String) {
+//        db.collection(COLLECTION_PRODUCT).document(productId).get().addOnSuccessListener {
+//            productList.add(it.toObject(Product::class.java) as Product)
+//            Log.d("PRODUCTT", it["name"].toString())
+//        }
+//    }
 
 }
