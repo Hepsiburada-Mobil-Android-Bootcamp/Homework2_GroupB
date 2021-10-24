@@ -23,12 +23,17 @@ class DetailViewModel : ViewModel() {
     private val likedList: ArrayList<String> = arrayListOf()
     var product: Product? = null
     private var productID: String = ""
+    val isDeleted: MutableLiveData<Boolean> by lazy { MutableLiveData<Boolean>(false) }
 
     fun getProductId(productDesc: String) {
         showProgressBar.value = true
         db.collection(COLLECTION_PRODUCT).whereEqualTo("description", productDesc).addSnapshotListener { value, error ->
-            productID = value?.documents!![0].id
-            showProgressBar.value = false
+            if(value!!.isEmpty) {
+                isDeleted.value = true
+            } else {
+                productID = value?.documents!![0].id
+                showProgressBar.value = false
+            }
         }
     }
 
@@ -70,8 +75,7 @@ class DetailViewModel : ViewModel() {
     fun delete(){
         db.collection("product").document(productID)
             .delete()
-            .addOnSuccessListener { Log.d("silme", "DocumentSnapshot successfully deleted!") }
-            .addOnFailureListener { e -> Log.w("silme", "Error deleting document", e) }
+            .addOnSuccessListener { isDeleted.value = true }
     }
 
 //    private fun increaseLikeCount(productName: String) {

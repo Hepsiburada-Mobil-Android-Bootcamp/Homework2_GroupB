@@ -58,6 +58,11 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
     }
 
     private fun initDeleteListener(){
+        viewModel.isDeleted.observe(viewLifecycleOwner) {
+            when(it) {
+                true -> findNavController().navigate(R.id.action_detailFragment_to_homeFragment)
+            }
+        }
         binding.btnDeleteProduct.setOnClickListener{
             viewModel.delete()
             findNavController().navigate(R.id.action_detailFragment_to_homeFragment)
