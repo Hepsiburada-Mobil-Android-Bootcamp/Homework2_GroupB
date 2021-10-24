@@ -17,7 +17,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             app:srcCompat="@drawable/profile_arrow_left"
-            android:layout_marginLeft="2dp"
+            android:layout_marginStart="20dp"
             android:backgroundTint="#E5E5E5"
             android:layout_marginTop="40dp"
             app:layout_constraintTop_toTopOf="parent"
@@ -27,7 +27,7 @@
             android:id="@+id/text_fill"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="40dp"
             android:fontFamily="@font/raleway_medium"
             android:text="Fill in your bio to get started"
@@ -42,7 +42,7 @@
             android:id="@+id/text_information"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
+            android:layout_marginStart="60dp"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/raleway_medium"
             android:text="This data will be displayed in your profile for security"
@@ -55,14 +55,13 @@
             android:id="@+id/e_text_name"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginHorizontal="20dp"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="20dp"
             android:hint="Name"
             app:hintTextColor="@color/profile_text_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/text_information">
+            app:layout_constraintTop_toBottomOf="@id/text_information">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
@@ -167,13 +166,13 @@
             android:id="@+id/button_next"
             android:layout_width="300dp"
             android:layout_height="60dp"
-            android:layout_marginStart="48dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="60dp"
             android:backgroundTint="#5956E9"
             android:src="@drawable/bg_firs_on_board_button"
             android:text="NEXT"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/e_text_address" />
 
 
