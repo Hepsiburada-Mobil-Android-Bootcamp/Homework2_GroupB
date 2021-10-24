@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="com.noor.homework2_groupb.data.model.Product" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/iv_item_favorites"
+            bindImage="@{product.imageUrl}"
+            android:layout_width="80dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/description"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_item_favorites_product_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/raleway_semibold"
+            android:text="@{product.name}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@id/iv_item_favorites"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="2020 Apple iPad Air 10.9" />
+
+        <TextView
+            android:id="@+id/tv_item_favorites_product_price"
+            bindPrice="@{product.price}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/raleway_semibold"
+            android:textColor="@color/purple"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_item_favorites_product_name"
+            app:layout_constraintTop_toBottomOf="@id/tv_item_favorites_product_name"
+            tools:text="$579.00" />
+
+        <TextView
+            android:id="@+id/tv_item_favorites_product_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/raleway_medium"
+            android:text="@{product.type}"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_favorites"
+            app:layout_constraintTop_toBottomOf="@+id/tv_item_favorites_product_price"
+            tools:text="Tablet" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

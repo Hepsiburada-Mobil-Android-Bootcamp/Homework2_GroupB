@@ -9,5 +9,5 @@ data class Product(
     val description: String = "",
     val imageUrl: String = "",
     val price: Int = 0,
-    val likeCount: Int = 0
+    var likeCount: Int = 0
 ): Serializable

@@ -7,7 +7,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.noor.homework2_groupb.data.model.Product
 
-const val COLLECTION_PATH_PRODUCT = "product"
+const val COLLECTION_PRODUCT = "product"
 const val FIELD_NAME = "name"
 const val FIELD_TYPE = "type"
 const val PRODUCT_LIKE_COUNT = "likeCount"
@@ -40,7 +40,7 @@ class HomeViewModel : ViewModel() {
 
     fun searchFromFirebase(query: String?) {
         showProgressBar.value = true
-        db.collection(COLLECTION_PATH_PRODUCT).whereEqualTo(FIELD_NAME, query).get()
+        db.collection(COLLECTION_PRODUCT).whereEqualTo(FIELD_NAME, query).get()
             .addOnSuccessListener {
                 _productResult.value = it.toObjects(Product::class.java) as ArrayList<Product>
             }.addOnCompleteListener {
@@ -49,7 +49,7 @@ class HomeViewModel : ViewModel() {
     }
 
     private fun getMostLikedProductsFromFirebase() {
-        db.collection(COLLECTION_PATH_PRODUCT)
+        db.collection(COLLECTION_PRODUCT)
             .orderBy(PRODUCT_LIKE_COUNT, Query.Direction.DESCENDING)
             .limit(5)
             .addSnapshotListener { value, _ ->
@@ -62,7 +62,7 @@ class HomeViewModel : ViewModel() {
 
     fun getProductsByCategoryFromFirebase(category: String) {
         showProgressBar.value = true
-        db.collection(COLLECTION_PATH_PRODUCT).whereEqualTo(FIELD_TYPE, category).get()
+        db.collection(COLLECTION_PRODUCT).whereEqualTo(FIELD_TYPE, category).get()
             .addOnSuccessListener {
                 _productList.value = it.toObjects(Product::class.java) as ArrayList<Product>
             }.addOnCompleteListener {
