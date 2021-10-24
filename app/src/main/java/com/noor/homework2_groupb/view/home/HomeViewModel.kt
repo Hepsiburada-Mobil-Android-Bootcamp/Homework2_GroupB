@@ -15,10 +15,6 @@ const val PRODUCT_LIKE_COUNT = "likeCount"
 class HomeViewModel : ViewModel() {
     private val db = FirebaseFirestore.getInstance()
 
-    init {
-        getMostLikedProductsFromFirebase()
-    }
-
     val showProgressBar: MutableLiveData<Boolean> by lazy {
         MutableLiveData<Boolean>(false)
     }
@@ -48,7 +44,7 @@ class HomeViewModel : ViewModel() {
             }
     }
 
-    private fun getMostLikedProductsFromFirebase() {
+    fun getMostLikedProductsFromFirebase() {
         db.collection(COLLECTION_PRODUCT)
             .orderBy(PRODUCT_LIKE_COUNT, Query.Direction.DESCENDING)
             .limit(5)

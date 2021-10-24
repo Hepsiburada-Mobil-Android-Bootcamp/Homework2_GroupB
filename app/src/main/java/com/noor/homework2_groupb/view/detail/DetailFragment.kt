@@ -13,7 +13,6 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
     private val viewModel by viewModels<DetailViewModel>()
     private val product by lazy { arguments?.getSerializable("product") as Product }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.product = product

@@ -29,10 +29,10 @@ class EditProfileFragment :  BaseFragment<FragmentEditProfileBinding>(FragmentEd
             val name = binding.eTextName.text.toString()
             val surname = binding.eTextSurname.text.toString()
             val address = binding.eTextAddress.text.toString()
-            val phoneNumber =  binding.eTextPhoneNumber.text.toString()
+            val phoneNumber =  binding.eTextPhoneNumber.text.toString().toInt()
             val username = binding.eTextUsername.text.toString()
             //val image = binding.imgUser.value.toString()
-            viewModel2.updateUserFromFirebase(user = User(username,name,surname,address,phoneNumber) )
+            viewModel2.updateUserFromFirebase(user = User(username,name,surname,address,phoneNumber,true) )
         }
     }
 }

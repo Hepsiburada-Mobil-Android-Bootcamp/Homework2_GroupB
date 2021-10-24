@@ -8,6 +8,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.noor.homework2_groupb.data.model.Product
 import com.noor.homework2_groupb.data.model.User
 import com.noor.homework2_groupb.view.home.FIELD_NAME
+import com.noor.homework2_groupb.view.home.PRODUCT_LIKE_COUNT
 
 const val COLLECTION_FAVORITES = "favorites"
 const val COLLECTION_PRODUCT = "product"
@@ -16,7 +17,6 @@ class DetailViewModel : ViewModel() {
 
     private val db = FirebaseFirestore.getInstance()
     private val currentUser = FirebaseAuth.getInstance().currentUser!!.uid
-
 
     val showProgressBar: MutableLiveData<Boolean> by lazy { MutableLiveData<Boolean>(false) }
     val isLiked: MutableLiveData<Boolean> by lazy { MutableLiveData<Boolean>(false) }
@@ -34,9 +34,10 @@ class DetailViewModel : ViewModel() {
 
     fun isFavorite() {
         db.collection(COLLECTION_FAVORITES).document(currentUser).get().addOnSuccessListener {
-            likedList.addAll(it.get("name") as ArrayList<String>)
-            isLiked.value = likedList.contains(productID)
-            Log.d("ASDASDASD", likedList.contains(productID).toString())
+            if(it.data != null) {
+                likedList.addAll(it.get("name") as ArrayList<String>)
+                isLiked.value = likedList.contains(productID)
+            }
         }
     }
 

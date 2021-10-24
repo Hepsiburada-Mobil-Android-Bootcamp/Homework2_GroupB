@@ -104,7 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:backgroundTint="@color/white"
-                android:text="@{user.phoneNumber}"
+                android:text="@{user.phoneNumber.toString()}"
                 android:fontFamily="@font/raleway_medium"
                 android:inputType="phone" />
 
