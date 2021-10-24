@@ -9,9 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="profile_text_color">#000000</color>
     <color name="bg_profile_buttons">#FFFFFF</color>
-
+    <color name="light_gray">#F6F6F9</color>
     <color name="cardView">#5956E9</color>
-
     <color name="dark">#200E32</color>
     <color name="dark_secondary">#868686</color>
     <color name="dark_third">#C9C9C9</color>

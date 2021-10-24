@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="user"
+            type="com.noor.homework2_groupb.data.model.User" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -40,7 +42,7 @@
             app:layout_constraintTop_toTopOf="@id/imageBtn_arrow_left" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/e_text_name"
+            android:id="@id/t_name"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginHorizontal="20dp"
@@ -52,15 +54,17 @@
             app:layout_constraintTop_toBottomOf="@id/text_fill">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/e_text_name"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:backgroundTint="@color/white"
+                android:text="@{user.name}"
                 android:fontFamily="@font/raleway_medium" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/e_text_surname"
+            android:id="@+id/t_surname"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
@@ -70,40 +74,20 @@
             app:hintTextColor="@color/profile_text_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/e_text_name">
+            app:layout_constraintTop_toBottomOf="@+id/t_name">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/e_text_surname"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
+                android:text="@{user.surname}"
                 android:backgroundTint="@color/white"
                 android:fontFamily="@font/raleway_medium" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/e_text_email"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:hint="E-mail"
-            app:hintTextColor="@color/profile_text_color"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/e_text_surname">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:backgroundTint="@color/white"
-                android:fontFamily="@font/raleway_medium"
-                android:inputType="textEmailAddress" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/e_text_phone_number"
+            android:id="@+id/t_phone_number"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
@@ -113,19 +97,43 @@
             app:hintTextColor="@color/profile_text_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/e_text_email">
+            app:layout_constraintTop_toBottomOf="@+id/t_surname">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/e_text_phone_number"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:backgroundTint="@color/white"
+                android:text="@{user.phoneNumber}"
                 android:fontFamily="@font/raleway_medium"
                 android:inputType="phone" />
 
         </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/t_username"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Username"
+            app:hintTextColor="@color/profile_text_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t_phone_number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/e_text_username"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:backgroundTint="@color/white"
+                android:text="@{user.username}"
+                android:fontFamily="@font/raleway_medium" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/e_text_address"
+            android:id="@+id/t_address"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_marginStart="20dp"
@@ -135,12 +143,14 @@
             app:hintTextColor="@color/profile_text_color"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/e_text_phone_number">
+            app:layout_constraintTop_toBottomOf="@+id/t_username">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/e_text_address"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:backgroundTint="@color/white"
+                android:text="@{user.address}"
                 android:fontFamily="@font/raleway_medium"
                 android:inputType="textImeMultiLine" />
 
@@ -153,11 +163,22 @@
             android:layout_marginTop="80dp"
             android:backgroundTint="#5956E9"
             android:src="@drawable/bg_firs_on_board_button"
-            android:text="NEXT"
+            android:text="UPDATE"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/e_text_address" />
+            app:layout_constraintTop_toBottomOf="@+id/t_address" />
+
+        <ImageView
+            android:id="@+id/img_user"
+            android:layout_width="87dp"
+            android:layout_height="69dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:src="@{user.img}"
+            tools:srcCompat="@tools:sample/avatars" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

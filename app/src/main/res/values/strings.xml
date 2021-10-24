@@ -3,8 +3,9 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
+    <string name="favorites">Favorites</string>
     <string name="profile">Profile</string>
-    <string name="find_your_gadget">Find your Gadget</string>
+    <string name="find_your_gadget">Find your \nGadget</string>
     <string name="welcome_back">Welcome \nback</string>
     <string name="get_started">Get started</string>
     <string name="email">Email</string>
@@ -45,7 +46,9 @@
     <string name="tablet">tablet</string>
     <string name="phone">phone</string>
     <string name="laptop">laptop</string>
+    <string name="welcome_to_teamb">Welcome \nto TeamB</string>
+    <string name="next">Next</string>
+    <string name="surname">Surname</string>
     <string name="edit">Edit</string>
-    <string name="favorites">Favorites</string>
     <string name="delete">Delete</string>
 </resources>

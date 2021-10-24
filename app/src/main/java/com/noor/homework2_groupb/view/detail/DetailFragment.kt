@@ -2,6 +2,7 @@ package com.noor.homework2_groupb.view.detail
 
 import android.os.Bundle
 import android.view.View
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
 import com.noor.homework2_groupb.base.BaseFragment
 import com.noor.homework2_groupb.data.model.Product
@@ -11,6 +12,7 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
 
     private val viewModel by viewModels<DetailViewModel>()
     private val product by lazy { arguments?.getSerializable("product") as Product }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -22,6 +24,8 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
 
         initLikeListener()
         initProgressBarListener()
+        initDeleteListener()
+        initGoBackListener()
     }
 
     private fun initLikeListener() {
@@ -48,6 +52,19 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
                 true -> binding.pbDetail.visibility = View.VISIBLE
                 false -> binding.pbDetail.visibility = View.GONE
             }
+        }
+    }
+
+    private fun initDeleteListener(){
+        binding.btnDeleteProduct.setOnClickListener{
+            viewModel.delete()
+            activity?.supportFragmentManager?.popBackStack()
+        }
+    }
+
+    private fun initGoBackListener(){
+        binding.ivBackToHomeFromDetail.setOnClickListener{
+            activity?.supportFragmentManager?.popBackStack()
         }
     }
 

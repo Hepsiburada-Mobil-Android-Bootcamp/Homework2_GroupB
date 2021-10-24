@@ -1,5 +1,6 @@
 package com.noor.homework2_groupb.view.addproduct
 
+import android.Manifest
 import android.animation.Animator
 import android.app.Activity
 import android.content.Intent
@@ -175,7 +176,7 @@ class AddProductFragment :
 
     private fun askPermissionForGoToGallery() {
         Dexter.withContext(context)
-            .withPermission(android.Manifest.permission.READ_EXTERNAL_STORAGE)
+            .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
             .withListener(object : PermissionListener {
                 override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
                 }

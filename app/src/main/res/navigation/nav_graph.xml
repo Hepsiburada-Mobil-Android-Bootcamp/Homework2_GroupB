@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/detailFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -16,6 +16,8 @@
         <action
             android:id="@+id/action_splashFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@+id/homeFragment"/>
     </fragment>
     <fragment
         android:id="@+id/onBoardingFragment"
@@ -69,7 +71,7 @@
             android:id="@+id/action_profileFragment_to_settingsFragment"
             app:destination="@id/settingsFragment" />
         <action
-            android:id="@+id/action_profileFragment_to_fragment_edit_profile2"
+            android:id="@+id/action_profileFragment_to_fragment_edit_profile"
             app:destination="@id/editProfileFragments" />
     </fragment>
     <fragment
@@ -82,6 +84,8 @@
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@+id/homeFragment" />
+        <action android:id="@+id/action_loginFragment_to_userInformationFragment"
+            app:destination="@+id/userInformationFragment"/>
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
@@ -96,9 +100,6 @@
         <action
             android:id="@+id/action_profileFragment_to_fragment_settings"
             app:destination="@id/settingsFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_fragment_edit_profile"
-            app:destination="@id/editProfileFragments" />
     </fragment>
     <fragment
         android:id="@+id/editProfileFragments"
@@ -112,7 +113,10 @@
     <fragment
         android:id="@+id/userInformationFragment"
         android:name="com.noor.homework2_groupb.view.user.UserInformationFragment"
-        android:label="UserInformationFragment" />
+        android:label="UserInformationFragment" >
+        <action android:id="@+id/userInformationFragment_to_homeFragment"
+            app:destination="@+id/homeFragment"/>
+    </fragment>
     <fragment
         android:id="@+id/userPhotoFragment"
         android:name="com.noor.homework2_groupb.view.user.UserPhotoFragment"

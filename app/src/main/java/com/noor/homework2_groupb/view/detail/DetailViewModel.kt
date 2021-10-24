@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.noor.homework2_groupb.data.model.Product
+import com.noor.homework2_groupb.data.model.User
 import com.noor.homework2_groupb.view.home.FIELD_NAME
 
 const val COLLECTION_FAVORITES = "favorites"
@@ -15,6 +16,7 @@ class DetailViewModel : ViewModel() {
 
     private val db = FirebaseFirestore.getInstance()
     private val currentUser = FirebaseAuth.getInstance().currentUser!!.uid
+
 
     val showProgressBar: MutableLiveData<Boolean> by lazy { MutableLiveData<Boolean>(false) }
     val isLiked: MutableLiveData<Boolean> by lazy { MutableLiveData<Boolean>(false) }
@@ -62,6 +64,13 @@ class DetailViewModel : ViewModel() {
             }.addOnCompleteListener {
                 showProgressBar.value = false
             }
+    }
+
+    fun delete(){
+        db.collection("product").document(productID)
+            .delete()
+            .addOnSuccessListener { Log.d("silme", "DocumentSnapshot successfully deleted!") }
+            .addOnFailureListener { e -> Log.w("silme", "Error deleting document", e) }
     }
 
 //    private fun increaseLikeCount(productName: String) {

@@ -15,7 +15,7 @@ class FirstOnBoardFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnGotoSecond.setOnClickListener {
+        binding.btnNext.setOnClickListener {
             onboardViewPager?.currentItem = 1
         }
     }
