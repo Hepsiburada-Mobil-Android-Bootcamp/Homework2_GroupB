@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
+import com.noor.homework2_groupb.R
 import com.noor.homework2_groupb.base.BaseFragment
 import com.noor.homework2_groupb.data.model.Product
 import com.noor.homework2_groupb.databinding.FragmentDetailBinding
+import com.noor.homework2_groupb.view.home.HomeFragmentDirections
 
 class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding::inflate) {
 
@@ -57,13 +60,13 @@ class DetailFragment : BaseFragment<FragmentDetailBinding>(FragmentDetailBinding
     private fun initDeleteListener(){
         binding.btnDeleteProduct.setOnClickListener{
             viewModel.delete()
-            activity?.supportFragmentManager?.popBackStack()
+            findNavController().navigate(R.id.action_detailFragment_to_homeFragment)
         }
     }
 
     private fun initGoBackListener(){
         binding.ivBackToHomeFromDetail.setOnClickListener{
-            activity?.supportFragmentManager?.popBackStack()
+            findNavController().navigate(R.id.action_detailFragment_to_homeFragment)
         }
     }
 
