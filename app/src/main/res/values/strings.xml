@@ -46,4 +46,6 @@
     <string name="tablet">tablet</string>
     <string name="phone">phone</string>
     <string name="laptop">laptop</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
 </resources>

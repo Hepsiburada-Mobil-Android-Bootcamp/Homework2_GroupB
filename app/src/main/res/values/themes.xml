@@ -27,5 +27,8 @@
     <style name="ThemeOverlay.MyApp.Chip.Choice" parent="">
         <item name="elevationOverlayEnabled">false</item>
     </style>
-
+    <style name="btnBasketTheme">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="colorButtonNormal">@color/purple</item>
+    </style>
 </resources>
