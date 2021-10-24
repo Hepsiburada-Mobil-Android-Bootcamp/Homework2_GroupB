@@ -12,31 +12,42 @@
         tools:context=".FirstOnBoardFragment"
         android:background="#5956E9">
     <TextView
-        android:id="@+id/text_header"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/raleway_medium"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginStart="51dp"
-        android:layout_marginEnd="71dp"
-        android:layout_marginTop="70dp"
-        android:text="asadasd "
-        android:textColor="@color/white"
-        android:textSize="65sp"/>
+            android:id="@+id/text_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="51dp"
+            android:layout_marginEnd="71dp"
+            android:layout_marginTop="70dp"
+            android:text="@string/welcome_to_teamb"
+            android:textColor="@color/white"
+            android:textSize="65sp"/>
 
-    <Button
-        android:id="@+id/btn_goto_second"
-        android:layout_width="314dp"
-        android:layout_height="70dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="bbbbb"
-        android:textColor="#5956E9"
-        android:textSize="16sp"
-        android:textAllCaps="false"
-        android:backgroundTint="@color/white"/>
+        <ImageView
+            android:id="@+id/img_on_board"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            app:layout_constraintTop_toBottomOf="@+id/text_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@mipmap/ic_launcher_on_board_screen"/>
+
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="314dp"
+            android:layout_height="70dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_on_board"
+            android:layout_marginTop="20dp"
+            android:text="@string/next"
+            android:textColor="#5956E9"
+            android:textSize="16sp"
+            android:textAllCaps="false"
+            android:backgroundTint="@color/white"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -18,6 +18,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
     private val db by lazy { FirebaseFirestore.getInstance() }
     private val email by lazy { binding.eTextEmail.text }
     private val password by lazy {  binding.eTextPassword.text }
+    private val user by lazy { User() }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -27,14 +28,13 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
             if (validEmail() && validPassword())
                 signUpUser(email.toString(),password.toString())
         }
-
     }
 
     private fun signUpUser(email:String,password:String){
 
         auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
             if (it.isSuccessful) {
-                addUserToCollection(email,password)
+                addUserToCollection()
                 findNavController().navigate(R.id.signUpFragment_to_loginFragment)
 
             } else {
@@ -42,27 +42,25 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
             }
         }
     }
-    private fun addUserToCollection(email: String,password: String){
-        val user by lazy { User(email,password) }
+    private fun addUserToCollection(){
         db.collection("users").document(auth.currentUser!!.uid).set(user)
     }
     private fun validEmail(): Boolean {
-        val email2 = binding.eTextEmail.text
-        if (email2.isNullOrEmpty()) {
+        if (email.isNullOrEmpty()) {
             binding.eTextEmail.requestFocus()
             binding.textInputLayoutEmail.error = "Email is required!"
             return false
-        } else if (email2.length < 5) {
+        } else if (email!!.length < 5) {
             binding.eTextEmail.requestFocus()
             binding.textInputLayoutEmail.error = "Email is invalid!"
             Toast.makeText(context,"Must be longer than 5 characters",Toast.LENGTH_SHORT).show()
             return false
-        } else if (email2.length > 50) {
+        } else if (email!!.length > 50) {
             binding.eTextEmail.requestFocus()
             binding.textInputLayoutEmail.error = "Email is invalid!"
             Toast.makeText(context,"Must be shorter than 50 characters",Toast.LENGTH_SHORT).show()
             return false
-        } else if (!email2.contains(Regex("@+."))) {
+        } else if (!email!!.contains(Regex("@+."))) {
             binding.eTextEmail.requestFocus()
             binding.textInputLayoutEmail.error = "Email is invalid!"
             Toast.makeText(context,"Must require @ and .",Toast.LENGTH_SHORT).show()
@@ -74,43 +72,42 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(FragmentSignUpBinding
 
         return true
     } private fun validPassword():Boolean{
-        val password2 = binding.eTextPassword.text
         /* val passwordRegex = Pattern.compile(
              "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])([^a-zA-Z0-9 ])$"
          )*/
-        if (password2.isNullOrEmpty()) {
+        if (password.isNullOrEmpty()) {
             binding.eTextPassword.requestFocus()
             binding.textInputLayoutPassword.error = "Password is required!"
             return false
-        } else if (password2.length < 7) {
+        } else if (password!!.length < 7) {
             binding.eTextPassword.requestFocus()
             binding.textInputLayoutPassword.error = "Password is too short!"
             Toast.makeText(context,"Must be longer than 7 characters",Toast.LENGTH_SHORT).show()
             return false
-        } else if (password2.length > 40) {
+        } else if (password!!.length > 40) {
             binding.eTextPassword.requestFocus()
             binding.textInputLayoutPassword.error = "Password is too long!"
             Toast.makeText(context,"Must be shorter than 40 characters",Toast.LENGTH_SHORT).show()
             return false
-        } else if (!password2.contains(Regex("[0-9]"))) {
+        } else if (!password!!.contains(Regex("[0-9]"))) {
             binding.eTextPassword.requestFocus()
             binding.textInputLayoutPassword.error =
                 "Password must contain one digit, one uppercase letter," +
                         "one lowercase letter and one special character!"
             return false
-        } else if (!password2.contains(Regex("[A-Z]"))) {
+        } else if (!password!!.contains(Regex("[A-Z]"))) {
             binding.eTextPassword.requestFocus()
             binding.textInputLayoutPassword.error =
                 "Password must contain one digit, one uppercase letter," +
                         "one lowercase letter and one special character!"
             return false
-        } else if (!password2.contains(Regex("[a-z]"))) {
+        } else if (!password!!.contains(Regex("[a-z]"))) {
             binding.eTextPassword.requestFocus()
             binding.textInputLayoutPassword.error =
                 "Password must contain one digit, one uppercase letter," +
                         "one lowercase letter and one special character!"
             return false
-        } else if (!password2.contains(Regex("[^a-zA-Z0-9 ]"))) {
+        } else if (!password!!.contains(Regex("[^a-zA-Z0-9 ]"))) {
             binding.eTextPassword.requestFocus()
             binding.textInputLayoutPassword.error =
                 "Password must contain one digit, one uppercase letter," +
