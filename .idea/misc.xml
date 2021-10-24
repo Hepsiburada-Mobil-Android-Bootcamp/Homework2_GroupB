@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android Projects/Homework2_GroupB/app/src/main/res/drawable/bg_detail_card_view.xml" value="0.1145" />
+        <entry key="..\:/Android Projects/Homework2_GroupB/app/src/main/res/drawable/ic_arrow.xml" value="0.27" />
+        <entry key="..\:/Android Projects/Homework2_GroupB/app/src/main/res/drawable/ic_favorite.xml" value="0.27" />
+        <entry key="..\:/Android Projects/Homework2_GroupB/app/src/main/res/drawable/ic_unfavorite.xml" value="0.281" />
+        <entry key="..\:/Android Projects/Homework2_GroupB/app/src/main/res/layout/fragment_detail.xml" value="0.22" />
         <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_login.xml" value="0.276268115942029" />
         <entry key="..\:/AndroidApps/Homework2_GroupB/app/src/main/res/layout/fragment_sign_up.xml" value="0.276268115942029" />
         <entry key="..\:/AndroidStudioProjects/Homework2_GroupB/app/src/main/res/drawable/bg_profile_buttons.xml" value="0.273828125" />
@@ -42,10 +47,6 @@
         <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_second_on_board.xml" value="0.2033514492753623" />
         <entry key="..\:/dev/android/workspace/Homework2_GroupB/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
-        <entry key="..\:/Android Projects/Homework2_GroupB/app/src/main/res/drawable/ic_arrow.xml" value="0.27" />
-        <entry key="..\:/Android Projects/Homework2_GroupB/app/src/main/res/drawable/ic_favorite.xml" value="0.27" />
-        <entry key="..\:/Android Projects/Homework2_GroupB/app/src/main/res/drawable/ic_unfavorite.xml" value="0.281" />
-        <entry key="..\:/Android Projects/Homework2_GroupB/app/src/main/res/layout/fragment_detail.xml" value="0.22" />
       </map>
     </option>
   </component>
